@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище autoservice_kpModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AutoserviceNikit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="MidleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="Balance" Type="money" />
+          <Property Name="ContractId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CompanyNikit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Service" Type="nvarchar" MaxLength="50" />
+          <Property Name="Duration" Type="datetime" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ContractsNikit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Price" Type="money" />
+          <Property Name="Number" Type="int" />
+          <Property Name="CompanyId" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RoleNikit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_AutoserviceNikit_ContractsNikit">
+          <End Role="ContractsNikit" Type="Self.ContractsNikit" Multiplicity="1" />
+          <End Role="AutoserviceNikit" Type="Self.AutoserviceNikit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContractsNikit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AutoserviceNikit">
+              <PropertyRef Name="ContractId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AutoserviceNikit_Role">
+          <End Role="RoleNikit" Type="Self.RoleNikit" Multiplicity="1" />
+          <End Role="AutoserviceNikit" Type="Self.AutoserviceNikit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoleNikit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AutoserviceNikit">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContractsNikit_ContractsNikit">
+          <End Role="CompanyNikit" Type="Self.CompanyNikit" Multiplicity="1" />
+          <End Role="ContractsNikit" Type="Self.ContractsNikit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CompanyNikit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContractsNikit">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище autoservice_kpModelContainer">
+          <EntitySet Name="AutoserviceNikit" EntityType="Self.AutoserviceNikit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CompanyNikit" EntityType="Self.CompanyNikit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContractsNikit" EntityType="Self.ContractsNikit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RoleNikit" EntityType="Self.RoleNikit" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AutoserviceNikit_ContractsNikit" Association="Self.FK_AutoserviceNikit_ContractsNikit">
+            <End Role="ContractsNikit" EntitySet="ContractsNikit" />
+            <End Role="AutoserviceNikit" EntitySet="AutoserviceNikit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AutoserviceNikit_Role" Association="Self.FK_AutoserviceNikit_Role">
+            <End Role="RoleNikit" EntitySet="RoleNikit" />
+            <End Role="AutoserviceNikit" EntitySet="AutoserviceNikit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContractsNikit_ContractsNikit" Association="Self.FK_ContractsNikit_ContractsNikit">
+            <End Role="CompanyNikit" EntitySet="CompanyNikit" />
+            <End Role="ContractsNikit" EntitySet="ContractsNikit" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="autoservice_kpModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AutoserviceNikit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MidleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RoleId" Type="Int32" Nullable="false" />
+          <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ContractId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ContractsNikit" Relationship="Self.FK_AutoserviceNikit_ContractsNikit" FromRole="AutoserviceNikit" ToRole="ContractsNikit" />
+          <NavigationProperty Name="RoleNikit" Relationship="Self.FK_AutoserviceNikit_Role" FromRole="AutoserviceNikit" ToRole="RoleNikit" />
+        </EntityType>
+        <EntityType Name="CompanyNikit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Service" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Duration" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ContractsNikit" Relationship="Self.FK_ContractsNikit_ContractsNikit" FromRole="CompanyNikit" ToRole="ContractsNikit" />
+          <Property Name="Photo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ContractsNikit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Number" Type="Int32" />
+          <Property Name="CompanyId" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AutoserviceNikit" Relationship="Self.FK_AutoserviceNikit_ContractsNikit" FromRole="ContractsNikit" ToRole="AutoserviceNikit" />
+          <NavigationProperty Name="CompanyNikit" Relationship="Self.FK_ContractsNikit_ContractsNikit" FromRole="ContractsNikit" ToRole="CompanyNikit" />
+        </EntityType>
+        <EntityType Name="RoleNikit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AutoserviceNikit" Relationship="Self.FK_AutoserviceNikit_Role" FromRole="RoleNikit" ToRole="AutoserviceNikit" />
+        </EntityType>
+        <Association Name="FK_AutoserviceNikit_ContractsNikit">
+          <End Role="ContractsNikit" Type="Self.ContractsNikit" Multiplicity="1" />
+          <End Role="AutoserviceNikit" Type="Self.AutoserviceNikit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContractsNikit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AutoserviceNikit">
+              <PropertyRef Name="ContractId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AutoserviceNikit_Role">
+          <End Role="RoleNikit" Type="Self.RoleNikit" Multiplicity="1" />
+          <End Role="AutoserviceNikit" Type="Self.AutoserviceNikit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoleNikit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AutoserviceNikit">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContractsNikit_ContractsNikit">
+          <End Role="CompanyNikit" Type="Self.CompanyNikit" Multiplicity="1" />
+          <End Role="ContractsNikit" Type="Self.ContractsNikit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CompanyNikit">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContractsNikit">
+              <PropertyRef Name="CompanyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="autoservice_kpEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AutoserviceNikit" EntityType="Self.AutoserviceNikit" />
+          <EntitySet Name="CompanyNikit" EntityType="Self.CompanyNikit" />
+          <EntitySet Name="ContractsNikit" EntityType="Self.ContractsNikit" />
+          <EntitySet Name="RoleNikit" EntityType="Self.RoleNikit" />
+          <AssociationSet Name="FK_AutoserviceNikit_ContractsNikit" Association="Self.FK_AutoserviceNikit_ContractsNikit">
+            <End Role="ContractsNikit" EntitySet="ContractsNikit" />
+            <End Role="AutoserviceNikit" EntitySet="AutoserviceNikit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AutoserviceNikit_Role" Association="Self.FK_AutoserviceNikit_Role">
+            <End Role="RoleNikit" EntitySet="RoleNikit" />
+            <End Role="AutoserviceNikit" EntitySet="AutoserviceNikit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContractsNikit_ContractsNikit" Association="Self.FK_ContractsNikit_ContractsNikit">
+            <End Role="CompanyNikit" EntitySet="CompanyNikit" />
+            <End Role="ContractsNikit" EntitySet="ContractsNikit" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище autoservice_kpModelContainer" CdmEntityContainer="autoservice_kpEntities">
+          <EntitySetMapping Name="AutoserviceNikit">
+            <EntityTypeMapping TypeName="autoservice_kpModel.AutoserviceNikit">
+              <MappingFragment StoreEntitySet="AutoserviceNikit">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MidleName" ColumnName="MidleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="ContractId" ColumnName="ContractId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompanyNikit">
+            <EntityTypeMapping TypeName="autoservice_kpModel.CompanyNikit">
+              <MappingFragment StoreEntitySet="CompanyNikit">
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Service" ColumnName="Service" />
+                <ScalarProperty Name="Duration" ColumnName="Duration" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContractsNikit">
+            <EntityTypeMapping TypeName="autoservice_kpModel.ContractsNikit">
+              <MappingFragment StoreEntitySet="ContractsNikit">
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoleNikit">
+            <EntityTypeMapping TypeName="autoservice_kpModel.RoleNikit">
+              <MappingFragment StoreEntitySet="RoleNikit">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

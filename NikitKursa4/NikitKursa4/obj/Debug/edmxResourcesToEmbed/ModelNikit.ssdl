@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище autoservice_kpModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AutoserviceNikit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="MidleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+    <Property Name="Balance" Type="money" />
+    <Property Name="ContractId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CompanyNikit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Service" Type="nvarchar" MaxLength="50" />
+    <Property Name="Duration" Type="datetime" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ContractsNikit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Price" Type="money" />
+    <Property Name="Number" Type="int" />
+    <Property Name="CompanyId" Type="int" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoleNikit">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_AutoserviceNikit_ContractsNikit">
+    <End Role="ContractsNikit" Type="Self.ContractsNikit" Multiplicity="1" />
+    <End Role="AutoserviceNikit" Type="Self.AutoserviceNikit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ContractsNikit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AutoserviceNikit">
+        <PropertyRef Name="ContractId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AutoserviceNikit_Role">
+    <End Role="RoleNikit" Type="Self.RoleNikit" Multiplicity="1" />
+    <End Role="AutoserviceNikit" Type="Self.AutoserviceNikit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoleNikit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AutoserviceNikit">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ContractsNikit_ContractsNikit">
+    <End Role="CompanyNikit" Type="Self.CompanyNikit" Multiplicity="1" />
+    <End Role="ContractsNikit" Type="Self.ContractsNikit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyNikit">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ContractsNikit">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище autoservice_kpModelContainer">
+    <EntitySet Name="AutoserviceNikit" EntityType="Self.AutoserviceNikit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyNikit" EntityType="Self.CompanyNikit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ContractsNikit" EntityType="Self.ContractsNikit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoleNikit" EntityType="Self.RoleNikit" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AutoserviceNikit_ContractsNikit" Association="Self.FK_AutoserviceNikit_ContractsNikit">
+      <End Role="ContractsNikit" EntitySet="ContractsNikit" />
+      <End Role="AutoserviceNikit" EntitySet="AutoserviceNikit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AutoserviceNikit_Role" Association="Self.FK_AutoserviceNikit_Role">
+      <End Role="RoleNikit" EntitySet="RoleNikit" />
+      <End Role="AutoserviceNikit" EntitySet="AutoserviceNikit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ContractsNikit_ContractsNikit" Association="Self.FK_ContractsNikit_ContractsNikit">
+      <End Role="CompanyNikit" EntitySet="CompanyNikit" />
+      <End Role="ContractsNikit" EntitySet="ContractsNikit" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

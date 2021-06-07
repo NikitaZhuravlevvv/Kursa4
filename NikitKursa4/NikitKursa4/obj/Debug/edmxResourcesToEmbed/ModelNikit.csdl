@@ -34,6 +34,9 @@
     <Property Name="Id" Type="Int32" Nullable="false" />
     <NavigationProperty Name="AutoserviceNikit" Relationship="Self.FK_AutoserviceNikit_ContractsNikit" FromRole="ContractsNikit" ToRole="AutoserviceNikit" />
     <NavigationProperty Name="CompanyNikit" Relationship="Self.FK_ContractsNikit_ContractsNikit" FromRole="ContractsNikit" ToRole="CompanyNikit" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Photo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Count" Type="Int32" />
   </EntityType>
   <EntityType Name="RoleNikit">
     <Key>

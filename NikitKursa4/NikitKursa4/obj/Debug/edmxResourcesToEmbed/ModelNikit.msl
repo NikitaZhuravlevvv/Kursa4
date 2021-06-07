@@ -27,6 +27,9 @@
     <EntitySetMapping Name="ContractsNikit">
       <EntityTypeMapping TypeName="autoservice_kpModel.ContractsNikit">
         <MappingFragment StoreEntitySet="ContractsNikit">
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="Number" ColumnName="Number" />
           <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />

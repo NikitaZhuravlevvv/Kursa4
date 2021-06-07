@@ -27,6 +27,15 @@ namespace NikitKursa4
             }
         }
 
+        public Uri ImagePreview
+        {
+            get
+            {
+                var imageName = System.IO.Path.Combine(Environment.CurrentDirectory, Photo ?? "");
+                return System.IO.File.Exists(imageName) ? new Uri(imageName) : new Uri("pack://application:,,,/Images/picture.png");
+            }
+        }
+
         public string BalanceString
         {
             get
@@ -57,17 +66,6 @@ namespace NikitKursa4
 
     }
 
-    partial class CompanyNikit
-    {
-        public Uri ImagePreview
-        {
-            get
-            {
-                var imageName = System.IO.Path.Combine(Environment.CurrentDirectory, Photo ?? "");
-                return System.IO.File.Exists(imageName) ? new Uri(imageName) : new Uri("pack://application:,,,/Images/picture.png");
-            }
-        }
-    }
 
 
 
@@ -258,15 +256,33 @@ namespace NikitKursa4
         private void DelOrd_Click(object sender, RoutedEventArgs e)
         {
             var item = ProductListView.SelectedItem as ContractsNikit;
+
+            if (item==null)
+            {
+                MessageBox.Show("Нельзя удалять, нужно выбрать");
+                return;
+            }
+
+
             Core.DB.ContractsNikit.Remove(item);
             Core.DB.SaveChanges();
             ServiceList = Core.DB.ContractsNikit.ToList();
+            PropertyChanged(this, new PropertyChangedEventArgs("ServiceList"));
+            PropertyChanged(this, new PropertyChangedEventArgs("FilteredServiceCount"));
+            PropertyChanged(this, new PropertyChangedEventArgs("ServiceCount"));
         }
 
 
         private void EditOrder_Click(object sender, RoutedEventArgs e)
         {
             var SelectedOrder = ProductListView.SelectedItem as ContractsNikit;
+
+            if (SelectedOrder == null)
+            {
+                MessageBox.Show("Нельзя изменять, нужно выбрать");
+                return;
+            }
+
             var EditOrderWindow = new CreateWindow(SelectedOrder);
             if ((bool)EditOrderWindow.ShowDialog())
             {

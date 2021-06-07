@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\User\Desktop\Nikit\NikitKursa4\NikitKursa4\ModelNikit.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\ModelNikit.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

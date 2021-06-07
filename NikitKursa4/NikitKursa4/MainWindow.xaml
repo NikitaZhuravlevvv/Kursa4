@@ -124,7 +124,7 @@
                                 <Image
                                     Width="64" 
                                     Height="64"
-                                    Source="{Binding Path=CompanyNikit.ImagePreview}" />
+                                    Source="{Binding Path=ImagePreview}" />
 
                                 <TextBlock 
                                     Text="{Binding BalanceString}" 
@@ -153,10 +153,10 @@
                                     </StackPanel>
 
                                     <TextBlock 
-                                        Text="{Binding BalanceString}" 
+                                        Text="{Binding Count}" 
                                         Grid.Row="1"/>
                                     <TextBlock 
-                                        Text="{Binding CompanyNikit.Duration}" 
+                                        Text="{Binding StartTimeText}" 
                                         Grid.Row="2"/>
                                 </Grid>
                             </Grid>

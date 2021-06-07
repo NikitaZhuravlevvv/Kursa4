@@ -34,6 +34,9 @@
           <Property Name="Number" Type="int" />
           <Property Name="CompanyId" Type="int" Nullable="false" />
           <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Photo" Type="nchar" MaxLength="10" />
+          <Property Name="Count" Type="int" />
         </EntityType>
         <EntityType Name="RoleNikit">
           <Key>
@@ -134,6 +137,9 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <NavigationProperty Name="AutoserviceNikit" Relationship="Self.FK_AutoserviceNikit_ContractsNikit" FromRole="ContractsNikit" ToRole="AutoserviceNikit" />
           <NavigationProperty Name="CompanyNikit" Relationship="Self.FK_ContractsNikit_ContractsNikit" FromRole="ContractsNikit" ToRole="CompanyNikit" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Photo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Count" Type="Int32" />
         </EntityType>
         <EntityType Name="RoleNikit">
           <Key>
@@ -229,6 +235,9 @@
           <EntitySetMapping Name="ContractsNikit">
             <EntityTypeMapping TypeName="autoservice_kpModel.ContractsNikit">
               <MappingFragment StoreEntitySet="ContractsNikit">
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Number" ColumnName="Number" />
                 <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />

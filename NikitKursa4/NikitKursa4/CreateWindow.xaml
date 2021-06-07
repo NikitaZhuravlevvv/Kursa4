@@ -8,43 +8,44 @@
         Title="Заказ" Height="450" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition  Width="*"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
+        <Image 
+            
+            Height="280" 
+            Width="280" 
+            Source="{Binding CurrentService.ImagePreview}" />
 
-        <StackPanel Margin="5" Grid.Column="1">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto"/>
-                    <RowDefinition  Height="*"/>
-                    <RowDefinition  Height="*"/>
-                    <RowDefinition  Height="*"/>
-                </Grid.RowDefinitions>
-
-                <StackPanel Margin="25" Grid.Row="0" Orientation="Horizontal">
-                    <Label  Content="Номер контракта"/>
-                    <TextBox Width="60" Text="{Binding CurrentService.Number}"/>
-                    <Label Content="Цена за контракт"/>
-                    <TextBox Width="60" Text="{Binding CurrentService.Price}"/>
-                </StackPanel>
-                <StackPanel Margin="25" Grid.Row="1" Orientation="Horizontal">
-                    <Label Content="Услуга компаний"/>
-                <ComboBox
+        <StackPanel Margin="5"  Grid.Column="1">
+            <Label Content="Номер контракта"/>
+            <TextBox Text="{Binding CurrentService.Number}"/>
+            <Label Content="Цена"/>
+            <TextBox Text="{Binding CurrentService.Price}"/>
+            <Label Content="Дата заключения контракта"/>
+            <TextBox Text="{Binding CurrentService.StartTimeText}"/>
+            <Label Content="Количество"/>
+            <TextBox Text="{Binding CurrentService.Count}"/>
+            
+            <Label Content="Услуга компаний"/>
+            <ComboBox
                 HorizontalAlignment="left"
                 ItemsSource="{Binding WorkList}"
                 SelectedItem="{Binding CurrentService.CompanyNikit}">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <Label Content="{Binding Service}"/>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
-                </StackPanel>
-            </Grid>
-
-
-
-            <Button Content="Сохранить" Margin="7" HorizontalAlignment="left" Click="SaveButton_Click"></Button>
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Service}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <Button Margin="5" HorizontalAlignment="Left" Click="GetImageButton_Click">Получить картинку</Button>
+            <Button Margin="5" HorizontalAlignment="Left" Click="SaveButton_Click">Сохранить</Button>
         </StackPanel>
+                    
+               
+
+
+
+            
     </Grid>
 </Window>

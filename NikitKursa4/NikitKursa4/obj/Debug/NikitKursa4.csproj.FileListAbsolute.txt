@@ -48,3 +48,28 @@ C:\Users\I(Y)\Desktop\Nikit\NikitKursa4\NikitKursa4\obj\Debug\NikitKursa4.csproj
 C:\Users\I(Y)\Desktop\Nikit\NikitKursa4\NikitKursa4\obj\Debug\NikitKursa4.csproj.CopyComplete
 C:\Users\I(Y)\Desktop\Nikit\NikitKursa4\NikitKursa4\obj\Debug\NikitKursa4.exe
 C:\Users\I(Y)\Desktop\Nikit\NikitKursa4\NikitKursa4\obj\Debug\NikitKursa4.pdb
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\bin\Debug\NikitKursa4.exe.config
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\bin\Debug\NikitKursa4.exe
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\bin\Debug\NikitKursa4.pdb
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\bin\Debug\EntityFramework.dll
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\bin\Debug\EntityFramework.xml
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\obj\Debug\NikitKursa4.csprojAssemblyReference.cache
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\obj\Debug\CreateWindow.g.cs
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\obj\Debug\MainWindow.g.cs
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\obj\Debug\App.g.cs
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\obj\Debug\NikitKursa4_Content.g.cs
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\obj\Debug\NikitKursa4_MarkupCompile.cache
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\obj\Debug\NikitKursa4_MarkupCompile.lref
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\obj\Debug\App.baml
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\obj\Debug\CreateWindow.baml
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\obj\Debug\MainWindow.baml
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\obj\Debug\NikitKursa4.g.resources
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\obj\Debug\NikitKursa4.Properties.Resources.resources
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\obj\Debug\NikitKursa4.csproj.GenerateResource.cache
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\obj\Debug\NikitKursa4.csproj.CoreCompileInputs.cache
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\obj\Debug\NikitKursa4.csproj.CopyComplete
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\obj\Debug\NikitKursa4.exe
+C:\Users\Kirk Novos\Desktop\Git\Kursa4\NikitKursa4\NikitKursa4\obj\Debug\NikitKursa4.pdb

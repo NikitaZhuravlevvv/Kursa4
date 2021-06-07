@@ -29,6 +29,9 @@
     <Property Name="Number" Type="int" />
     <Property Name="CompanyId" Type="int" Nullable="false" />
     <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Date" Type="date" />
+    <Property Name="Photo" Type="nchar" MaxLength="10" />
+    <Property Name="Count" Type="int" />
   </EntityType>
   <EntityType Name="RoleNikit">
     <Key>
